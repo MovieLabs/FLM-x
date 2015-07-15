@@ -1,0 +1,16 @@
+__ISSUE_DATE=2012-01-21T01:00:00.0
+__ANNO_TEXT=This is an example of an FLM-x document, constructed to conform to the current schema of the proposed ST 430-7 revision
+__FACILITY_NAME=Windy Cinema
+__FACILITY_ID=xyz:773054
+__TZ=America/Chicago
+__CIRCUIT=North Central
+__CONTACT_NAME=Rick Daley
+__CONTACT_CC=US
+__CONTACT_Phone=+1 312 555 1212
+__CONTACT_Email=rdaley@windy.com
+__CONTACT_Type=Projectionist
+__ADDR_PHY_SA=633 North Saint Clair Street
+__ADDR_PHY_CITY=Chicago
+__ADDR_PHY_PROVINCE=IL
+__ADDR_PHY_POSTAL=60611
+__ADDR_PHY_CC=US

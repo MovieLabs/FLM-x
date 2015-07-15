@@ -1,0 +1,16 @@
+__ISSUE_DATE=2008-08-18T18:00:00.0
+__ANNO_TEXT=This is an example of an FLM-x document, constructed to conform to the current schema of the proposed ST 430-7 revision
+__FACILITY_NAME=Mongoplex 30
+__FACILITY_ID=xyz:583054
+__TZ=America/New_York
+__CIRCUIT=Northeast
+__CONTACT_NAME=Jack Sprat
+__CONTACT_CC=US
+__CONTACT_Phone=+1 212 555 1212 x239
+__CONTACT_Email=jack@mongo.com
+__CONTACT_Type=Manager
+__ADDR_PHY_SA=123 W 57th Street
+__ADDR_PHY_CITY=New York
+__ADDR_PHY_PROVINCE=NY
+__ADDR_PHY_POSTAL=10019
+__ADDR_PHY_CC=US

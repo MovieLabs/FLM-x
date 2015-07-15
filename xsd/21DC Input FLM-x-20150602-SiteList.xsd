@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema 
+    elementFormDefault="qualified"
+    targetNamespace="http://smpte.org/XXXX"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:tns="http://smpte.org/XXXX"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd"/>
+    
+    <xs:element name="SiteList" type="tns:SiteListType"/>
+    <xs:complexType name="SiteListType">
+        <xs:sequence>
+            <xs:element name="Originator" type="xs:anyURI" />
+            <xs:element name="SystemName" type="xs:string" />
+            <xs:element name="DateTimeCreated" type="xs:dateTime" />
+            <xs:element name="FacilityList" type="tns:FacilityListType">
+                <xs:unique name="facility-id">
+                    <xs:selector xpath="tns:Facility" />
+                    <xs:field xpath="@id" /> 
+                </xs:unique>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FacilityListType">
+        <xs:sequence>
+            <xs:element name="Facility" type="tns:FacilityType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="FacilityType">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:attribute name="id" type="xs:anyURI" use="required" />
+                <xs:attribute name="modified" type="xs:dateTime" use="required" />
+                <xs:attribute ref="xlink:href" use="required" />
+                <xs:attribute ref="xlink:type" use="required" />
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

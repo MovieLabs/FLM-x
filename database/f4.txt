@@ -1,0 +1,16 @@
+__ISSUE_DATE=2011-11-11T11:11:11.1
+__ANNO_TEXT=This is an example of an FLM-x document, constructed to conform to the current schema of the proposed ST 430-7 revision
+__FACILITY_NAME=Montreal Cineplex
+__FACILITY_ID=xyz:51138
+__TZ=Canada/Eastern
+__CIRCUIT=Quebec
+__CONTACT_NAME=Jaque Thereaux
+__CONTACT_CC=CA
+__CONTACT_Phone=+1 514 555 1212
+__CONTACT_Email=jt@mqcplex.ca
+__CONTACT_Type=Operator
+__ADDR_PHY_SA=1255 Jeanne-Mance
+__ADDR_PHY_CITY=Montreal
+__ADDR_PHY_PROVINCE=QC
+__ADDR_PHY_POSTAL=H5B 1E5
+__ADDR_PHY_CC=CA

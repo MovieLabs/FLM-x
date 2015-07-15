@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flm:FacilityListMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+    xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes"
+    xmlns:flm="http://www.smpte-ra.org/schemas/430-7/20XX/FLM"
+    xsi:schemaLocation="http://www.smpte-ra.org/schemas/430-7/20XX/FLM file:21DC-PD-ST-430-7-revision-20150602.xsd">
+    <flm:MessageId>___UUID</flm:MessageId>
+    <flm:IssueDate>__ISSUE_DATE</flm:IssueDate>
+    <flm:AnnotationText>__ANNO_TEXT</flm:AnnotationText>
+    <flm:FacilityInfo>
+        <flm:FacilityID>__FACILITY_ID</flm:FacilityID>
+        <flm:FacilityName>Contoso 20</flm:FacilityName>
+        <flm:FacilityTimeZone>America/Los_Angeles</flm:FacilityTimeZone>
+        <flm:Circuit language="en">West Central</flm:Circuit>
+        <flm:ContactList>
+            <flm:Contact>
+                <flm:Name>__CONTACT_NAME</flm:Name>
+                <flm:CountryCode>__CONTACT_CC</flm:CountryCode>
+                <flm:Phone1>__CONTACT_Phone</flm:Phone1>
+                <flm:Email>__CONTACT_Email</flm:Email>
+                <flm:Type>__CONTACT_Type</flm:Type>
+            </flm:Contact>
+        </flm:ContactList>
+        <flm:AddressList>
+            <flm:Physical>
+                <flm:StreetAddress>__ADDR_PHY_SA</flm:StreetAddress>
+                <flm:City>__ADDR_PHY_CITY</flm:City>
+                <flm:Province>__ADDR_PHY_PROVINCE</flm:Province>
+                <flm:PostalCode>__ADDR_PHY_POSTAL</flm:PostalCode>
+                <flm:Country>__ADDR_PHY_CC</flm:Country>
+            </flm:Physical>
+        </flm:AddressList>
+    </flm:FacilityInfo>
+    <flm:AuditoriumList>
+<!-- ___BREAK -->
+        <flm:Auditorium>
+            <flm:AuditoriumNumberOrName>___AUDNUM</flm:AuditoriumNumberOrName>
+            <flm:ScreenWidth units="foot">52</flm:ScreenWidth>
+            <flm:SeatingCapacity>___RAND_300_600</flm:SeatingCapacity>
+            <flm:SuiteList>
+                <flm:Suite>
+                    <flm:Device>
+                        <flm:DeviceTypeID/>
+                        <flm:DeviceIdentifier idtype="DeviceUID">___UUID</flm:DeviceIdentifier>
+                        <flm:DeviceSerial>218281828</flm:DeviceSerial>
+                        <flm:Manufacturer>Universal Sprockets</flm:Manufacturer>
+                        <flm:ModelNumber>ACME ZXC12300</flm:ModelNumber>
+                        <flm:InstallDate>2011-05-02</flm:InstallDate>
+                        <flm:IsActive>true</flm:IsActive>
+                        <flm:Integrator/>
+                        <flm:VPFFinanceEntity>Cinedigm</flm:VPFFinanceEntity>
+                        <flm:VPFStartDate>2008-01-01</flm:VPFStartDate>
+                        <flm:ComponentList>
+                            <flm:Component>
+                                <flm:ComponentKind>Hardware</flm:ComponentKind>
+                                <flm:ComponentManufacturer>Universal Sprockets</flm:ComponentManufacturer>
+                                <flm:Description>Description of what?</flm:Description>
+                                <flm:Version>20.01r</flm:Version>
+                            </flm:Component>
+                            <flm:Component>
+                                <flm:ComponentKind>Firmware</flm:ComponentKind>
+                                <flm:ComponentManufacturer>Universal Sprockets</flm:ComponentManufacturer>
+                                <flm:Description>Production firmware</flm:Description>
+                                <flm:Version>0.91.5.4</flm:Version>
+                            </flm:Component>
+                        </flm:ComponentList>
+                        <flm:KeyInfoList>
+                            <ds:KeyInfo>
+                                <ds:X509Data>
+                                    <ds:X509Certificate>
+                                        <!-- Root CA Cert,  Subject: CN=.smpte-430-2.ROOT.NOT_FOR_PRODUCTION/dnQualifier=stKUkogg+7v1A62kFxS93oo1Kyk= -->
+                                        MIIEdzCCA1+gAwIBAgIBBTANBgkqhkiG9w0BAQsFADCBgjEUMBIGA1UEChMLZXhh
+                                        bXBsZS5vcmcxFDASBgNVBAsTC2V4YW1wbGUub3JnMS0wKwYDVQQDFCQuc21wdGUt
+                                        NDMwLTIuUk9PVC5OT1RfRk9SX1BST0RVQ1RJT04xJTAjBgNVBC4THHN0S1Vrb2dn
+                                        Kzd2MUE2MmtGeFM5M29vMUt5az0wHhcNMTUwNDI5MTY1OTA5WhcNMjUwNDI2MTY1
+                                        OTA5WjCBgjEUMBIGA1UEChMLZXhhbXBsZS5vcmcxFDASBgNVBAsTC2V4YW1wbGUu
+                                        b3JnMS0wKwYDVQQDFCQuc21wdGUtNDMwLTIuUk9PVC5OT1RfRk9SX1BST0RVQ1RJ
+                                        T04xJTAjBgNVBC4THHN0S1Vrb2dnKzd2MUE2MmtGeFM5M29vMUt5az0wggEiMA0G
+                                        CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC3hVv6fiSuUPAEpgByc3Waxvvs70JQ
+                                        vvSzUkYJK4hsx7iWnwxABQ2UAmbgDRZpa0bjmZMBnYB5U4/tiiBKM4+T7Mb7RDMK
+                                        VcXy5aGBsjYznyvq9oLfNf0vmYvIYupE6UHnBkXOlyxWzaTSuEsUzqShsymNu+3u
+                                        9vGQmULm4mOxQrxeBG00L5lMsktyP/YbH95J48La/OYbKsaFRCuJMNtulQmE7RwU
+                                        jESULZ8PoPuUrz7gf3mKBx0Uulo1zCo4kFGckfJOriotGDvw20yH0aJdK2mg2y1t
+                                        sHhCPe+H/k9TbOL0AhQ1jUFW2l/VO8D4HX5u58c0q6dOFhwXxiBBm75VAgMBAAGj
+                                        gfUwgfIwEgYDVR0TAQH/BAgwBgEB/wIBAzALBgNVHQ8EBAMCAQYwHQYDVR0OBBYE
+                                        FLLSlJKIIPu79QOtpBcUvd6KNSspMIGvBgNVHSMEgacwgaSAFLLSlJKIIPu79QOt
+                                        pBcUvd6KNSspoYGIpIGFMIGCMRQwEgYDVQQKEwtleGFtcGxlLm9yZzEUMBIGA1UE
+                                        CxMLZXhhbXBsZS5vcmcxLTArBgNVBAMUJC5zbXB0ZS00MzAtMi5ST09ULk5PVF9G
+                                        T1JfUFJPRFVDVElPTjElMCMGA1UELhMcc3RLVWtvZ2crN3YxQTYya0Z4Uzkzb28x
+                                        S3lrPYIBBTANBgkqhkiG9w0BAQsFAAOCAQEAEibM+u6vPuIkX9sjcPtPhG0VNiv9
+                                        v1fBYuutQTbP9lGNOjG3PwwTqePT6KNU08uApc8Pc/g/sXla2+UjSsYf9CBa0C3A
+                                        8XGECDtyybX3E3bLgDFHGYyGoCET3NOVTNDkt5nRuCkoWdbLGcnmqQuqc1sAevrS
+                                        8JExPJ4EZoIlWqhfr38q/Ixd8scPBByhrvviTySAU/iYt1ALCVH8J/DdZOpI0+1o
+                                        2qhJ13zl5E8xok/6o8usiY2JTnAxJxl0e4jEuqzuaHjBVRbBc2yxs9KRaAp2KgR7
+                                        SKeaRQ7lOfAmqLWOlI/VjStWxbuixzZKT6xBI8ppNmGJvfeQK0NlgOv34g== 
+                                    </ds:X509Certificate>
+                                    <ds:X509Certificate>
+                                        <!-- Intermediate cert, Subject: O=example.org, OU=example.org, CN=.smpte-430-2.INTERMEDIATE.NOT_FOR_PRODUCTION/dnQualifier=5ZBz5TXT1o6Sj+5FxvbXfP0OnMc= -->
+                                        MIIEfzCCA2egAwIBAgIBBjANBgkqhkiG9w0BAQsFADCBgjEUMBIGA1UEChMLZXhh
+                                        bXBsZS5vcmcxFDASBgNVBAsTC2V4YW1wbGUub3JnMS0wKwYDVQQDFCQuc21wdGUt
+                                        NDMwLTIuUk9PVC5OT1RfRk9SX1BST0RVQ1RJT04xJTAjBgNVBC4THHN0S1Vrb2dn
+                                        Kzd2MUE2MmtGeFM5M29vMUt5az0wHhcNMTUwNDI5MTY1OTA5WhcNMjUwNDI1MTY1
+                                        OTA5WjCBijEUMBIGA1UEChMLZXhhbXBsZS5vcmcxFDASBgNVBAsTC2V4YW1wbGUu
+                                        b3JnMTUwMwYDVQQDFCwuc21wdGUtNDMwLTIuSU5URVJNRURJQVRFLk5PVF9GT1Jf
+                                        UFJPRFVDVElPTjElMCMGA1UELhMcNVpCejVUWFQxbzZTais1Rnh2YlhmUDBPbk1j
+                                        PTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMLHpkLwNKjBqGooe5m8
+                                        G+dWwli3PqjATab0Cf6X6a7CX5j0TlQ19DsUaXWb4WmBdLG/eKO9czdIJ2eQGNnC
+                                        WJjZ+CTibwFPeMCFf+n5UWq+VF4h+gdg/RSdsbKPzmjLh+fdsm/Ea20WuHBKIMGJ
+                                        f8+6WdXWsmqMmD/OS9cNBmerccAh/vX7yg8IXKJBrQ5UcknHFs3hyf5PzwfMT/G/
+                                        xVYaV1ltAOJtzaTVBuWUUiGVGLieWV8T2+ddP3+Wq1tVNTillj3pHuD+G6RmzUwM
+                                        mC4bwKfl0DshceI4YhEhVgv/sRSN8mD9YCz/bkCnKsiCSDhBliwpfQ8du2KzPDOn
+                                        GVECAwEAAaOB9TCB8jASBgNVHRMBAf8ECDAGAQH/AgECMAsGA1UdDwQEAwIBBjAd
+                                        BgNVHQ4EFgQU5ZBz5TXT1o6Sj+5FxvbXfP0OnMcwga8GA1UdIwSBpzCBpIAUstKU
+                                        kogg+7v1A62kFxS93oo1KymhgYikgYUwgYIxFDASBgNVBAoTC2V4YW1wbGUub3Jn
+                                        MRQwEgYDVQQLEwtleGFtcGxlLm9yZzEtMCsGA1UEAxQkLnNtcHRlLTQzMC0yLlJP
+                                        T1QuTk9UX0ZPUl9QUk9EVUNUSU9OMSUwIwYDVQQuExxzdEtVa29nZys3djFBNjJr
+                                        RnhTOTNvbzFLeWs9ggEFMA0GCSqGSIb3DQEBCwUAA4IBAQCrNgfIA58RlEaG3roA
+                                        fT63n3iEsybafUM1bJvwsyG6Lu7oLBmWeOORS8o+YWCG1JBrLvLD5O+QYTbMkfku
+                                        ZiEqwLbvYa/+cZ16V2v+s/3QkbXJXw6GaZP163nclbPQEbnkZSykJZqlUPa5wp5o
+                                        cN7Kuw70H+F6ViEXKe5FOuutDhtuB3IG6VlgqXuf+cGBe5V0j0wOz5hBB4Q29SI2
+                                        pxz/qqdWgA3p5IbqBQ7dsTnQPy2tKvSV+iuOG7dFlX+fwyYgIhUNrNVGNWwv1nNX
+                                        BYFbGOgS4pYrReACsv+0t+qb/ebUCpWXdRa35lyOnUG0QExvPfsjXJbdaq6x+P/q 
+                                    </ds:X509Certificate>
+                                    <ds:X509Certificate>
+                                        <!--  Leaf cert, Subject: O=example.org, OU=example.org, CN=CS.smpte-430-2.LEAF.NOT_FOR_PRODUCTION/dnQualifier=DE0yXjPwlpKDI240MkE9GwVXoQM= -->
+                                        MIIEezCCA2OgAwIBAgIBBzANBgkqhkiG9w0BAQsFADCBijEUMBIGA1UEChMLZXhh
+                                        bXBsZS5vcmcxFDASBgNVBAsTC2V4YW1wbGUub3JnMTUwMwYDVQQDFCwuc21wdGUt
+                                        NDMwLTIuSU5URVJNRURJQVRFLk5PVF9GT1JfUFJPRFVDVElPTjElMCMGA1UELhMc
+                                        NVpCejVUWFQxbzZTais1Rnh2YlhmUDBPbk1jPTAeFw0xNTA0MjkxNjU5MDlaFw0y
+                                        NTA0MjQxNjU5MDlaMIGEMRQwEgYDVQQKEwtleGFtcGxlLm9yZzEUMBIGA1UECxML
+                                        ZXhhbXBsZS5vcmcxLzAtBgNVBAMUJkNTLnNtcHRlLTQzMC0yLkxFQUYuTk9UX0ZP
+                                        Ul9QUk9EVUNUSU9OMSUwIwYDVQQuExxERTB5WGpQd2xwS0RJMjQwTWtFOUd3Vlhv
+                                        UU09MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApOJo6NLT6yG05PYP
+                                        amyYY1PHz228sjTP13lU+nyaqqvb6zpUGhWp/1SZ/+byinJdmjAJLrNABwZ4oY+1
+                                        1E/Ua955jacBlxNokLCy2yPMFvh//6eqd15pFl3VKm+Hwy9h5VOkpNPBrTA4l06k
+                                        b+EkrblKu9rliZ7wi03Pqvxcu/eCWlYdHg6aTUJmcerW/wgdnmDZBjlWmoPgb8wb
+                                        yMC0Kk965oQY+Kei+6eVyPgspLnx3Au293HYTlT8Vo0a//dV/nRlVf4x3reAgu7D
+                                        EfXIcxaaFYdjqk6wPYTUvkVULTEaYyguAf1Ju0K0IwdAZGJqTE03qTN5hUbYGgfw
+                                        wbpkQQIDAQABo4HvMIHsMAwGA1UdEwEB/wQCMAAwCwYDVR0PBAQDAgWgMB0GA1Ud
+                                        DgQWBBQMTTJeM/CWkoMjbjQyQT0bBVehAzCBrwYDVR0jBIGnMIGkgBTlkHPlNdPW
+                                        jpKP7kXG9td8/Q6cx6GBiKSBhTCBgjEUMBIGA1UEChMLZXhhbXBsZS5vcmcxFDAS
+                                        BgNVBAsTC2V4YW1wbGUub3JnMS0wKwYDVQQDFCQuc21wdGUtNDMwLTIuUk9PVC5O
+                                        T1RfRk9SX1BST0RVQ1RJT04xJTAjBgNVBC4THHN0S1Vrb2dnKzd2MUE2MmtGeFM5
+                                        M29vMUt5az2CAQYwDQYJKoZIhvcNAQELBQADggEBAAJhgETp0IHSPqy9IrdNozbH
+                                        k2U6bImHs2Gar4Du8puRn/xIxbLe4ahLPUu0pP0eM5cC5FIkP5sdejcbkwhfovSF
+                                        a/B1uWLNRTk14Kr+zhbMCmDBLjk0yX+e3Ui/3oHEQkpXEAYuXK1IrH/D+HlA8TCi
+                                        IVNPg4R0vcfi8eqRq5ttjZQ/GV7BKCrofS6ES6dOXdboe0905mvHLPdZY9DbwBYE
+                                        BykPuu6JnefSzPumUbtBDkadZoyhyMEriySckV+AQ0epIKpZmafmMwxhAowTts82
+                                        bYRNcgggsKB9pRTRBf6TvflcLjjsZof4OixKi+4hiWPvfSml3zU0z4DmBOYtR1M=
+                                    </ds:X509Certificate>
+                                </ds:X509Data>
+                            </ds:KeyInfo>
+                        </flm:KeyInfoList>
+                        <flm:Capabilities>
+                            <flm:Resolution>4K</flm:Resolution>
+                            <flm:WatermarkingList>
+                                <flm:Watermarking>
+                                    <flm:WatermarkManufacturer>WMI</flm:WatermarkManufacturer>
+                                    <flm:WatermarkKind>Picture</flm:WatermarkKind>
+                                    <flm:WatermarkModel>DCT-2000</flm:WatermarkModel>
+                                    <flm:WatermarkVersion>10.0.31.2</flm:WatermarkVersion>
+                                </flm:Watermarking>
+                                <flm:Watermarking>
+                                    <flm:WatermarkManufacturer>WMI</flm:WatermarkManufacturer>
+                                    <flm:WatermarkKind>Audio</flm:WatermarkKind>
+                                    <flm:WatermarkModel>ACT-2000</flm:WatermarkModel>
+                                    <flm:WatermarkVersion>3.2.7</flm:WatermarkVersion>
+                                </flm:Watermarking>
+                            </flm:WatermarkingList>
+                        </flm:Capabilities>
+                    </flm:Device>
+                </flm:Suite>
+            </flm:SuiteList>
+            <flm:NonSecurityDeviceList>
+                <flm:Device>
+                    <flm:DeviceTypeID
+                        scope="http://www.smptera.org/schemas/433/2008/DCMLTypes/#DeviceTypeTokens">sound</flm:DeviceTypeID>
+                    <flm:DeviceIdentifier idtype="DeviceUID">___UUID</flm:DeviceIdentifier>
+                    <flm:Manufacturer>Universal Sprockets</flm:Manufacturer>
+                    <flm:ModelNumber>ACME ZXC12300/p</flm:ModelNumber>
+                    <flm:IsActive>true</flm:IsActive>
+                    <flm:Capabilities/>
+                </flm:Device>
+            </flm:NonSecurityDeviceList>
+            <flm:Capabilities>
+                <flm:Supports35MM>false</flm:Supports35MM>
+                <flm:ScreenAspectRatio>2.39</flm:ScreenAspectRatio>
+                <flm:AdjustableScreenMask>Top</flm:AdjustableScreenMask>
+                <flm:AudioFormatList>
+                    <flm:AudioFormat>Atmos</flm:AudioFormat>
+                </flm:AudioFormatList>
+                <flm:LargeFormat>
+                    <flm:Kind>ETX</flm:Kind>
+                    <flm:InstallDate>2012-12-12</flm:InstallDate>
+                </flm:LargeFormat>
+                <flm:Digital3DSystem>
+                    <flm:IsActive>true</flm:IsActive>
+                    <flm:Digital3DConfiguration>ASDF</flm:Digital3DConfiguration>
+                    <flm:InstallDate>2013-04-05</flm:InstallDate>
+                    <flm:ScreenType>Silver</flm:ScreenType>
+                    <flm:ScreenLuminance units="foot-lambert">14</flm:ScreenLuminance>
+                </flm:Digital3DSystem>
+                <flm:ClosedCaptionSystem>
+                    <flm:Kind>CaptiView</flm:Kind>
+                </flm:ClosedCaptionSystem>
+                <flm:VisuallyImpairedNarrationSystem>
+                    <flm:Kind>Fidelio</flm:Kind>
+                </flm:VisuallyImpairedNarrationSystem>
+                <flm:HearingImpairedSystem>
+                    <flm:Kind>PhonicEar</flm:Kind>
+                </flm:HearingImpairedSystem>
+            </flm:Capabilities>
+        </flm:Auditorium>
+<!-- ___BREAK -->
+    </flm:AuditoriumList>
+</flm:FacilityListMessage>

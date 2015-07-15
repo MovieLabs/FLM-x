@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:tns="http://smpte.org/XXXX"
+           targetNamespace="http://smpte.org/XXXX"
+           elementFormDefault="qualified">
+    <xs:element name="Error" type="tns:ErrorType"/>
+    <xs:simpleType name="Token">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[_0-9a-zA-Z]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="ErrorType">
+        <xs:sequence>
+            <xs:element name="Token" type="tns:Token"/>
+            <xs:element name="Message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

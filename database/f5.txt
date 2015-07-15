@@ -1,0 +1,16 @@
+__ISSUE_DATE=2011-11-11T11:11:11.1
+__ANNO_TEXT=This is an example of an FLM-x document, constructed to conform to the current schema of the proposed ST 430-7 revision
+__FACILITY_NAME=Contoso 20
+__FACILITY_ID=xyz:666666
+__TZ=America/Los_Angeles
+__CIRCUIT=West Central
+__CONTACT_NAME=Jane Doe
+__CONTACT_CC=US
+__CONTACT_Phone=+1 650 555 1212 x239
+__CONTACT_Email=jdoe@contoso.biz
+__CONTACT_Type=Manager
+__ADDR_PHY_SA=825 Middlefield Road
+__ADDR_PHY_CITY=Redwood City
+__ADDR_PHY_PROVINCE=CA
+__ADDR_PHY_POSTAL=94063
+__ADDR_PHY_CC=US
