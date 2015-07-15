@@ -5,7 +5,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:tns="http://smpte.org/XXXX"
     xmlns:xlink="http://www.w3.org/1999/xlink">
-    <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/XML/2008/06/xlink.xsd"/>
+    <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="xlink.xsd"/>
     
     <xs:element name="SiteList" type="tns:SiteListType"/>
     <xs:complexType name="SiteListType">
@@ -14,7 +14,7 @@
             <xs:element name="SystemName" type="xs:string" />
             <xs:element name="DateTimeCreated" type="xs:dateTime" />
             <xs:element name="FacilityList" type="tns:FacilityListType">
-                <xs:unique name="facility-id">
+                <xs:unique name="facility-id"> 
                     <xs:selector xpath="tns:Facility" />
                     <xs:field xpath="@id" /> 
                 </xs:unique>
