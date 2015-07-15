@@ -1,3 +1,5 @@
+Last updated: Tue Jul 14 17:45:01 PDT 2015
+
 I. Introduction
 
 This tarball contains files that support an HTTP(s) server that
@@ -8,7 +10,17 @@ accurately capture the current state of the protocol.  It is accurate
 
 Please report any bugs, issues, etc. to pgj@movielabs.com.
 
-II. Installation
+II. Unpacking the tarball
+
+Unpack the tarball into a directory of your choosing.  The listing
+should look somewhat like this ('node_modules' will not be present
+initially):
+
+   README.txt  flm-srv.js	node_modules/	  xsd/
+   auth/       npm-install.sh*  test-proto.sh*
+   database/   namespace	pwd-gen.js
+
+III. Installation
 
 The following are prerequisites:
 
@@ -17,55 +29,83 @@ The following are prerequisites:
   possible to use MySQL as an alternative to MariaDB.  This work was
   done with v5.5.41, but the specific version should not matter since
   no advanced features are being used.  The installer can be obtained
-  from https://mariadb.org/.
+  from https://mariadb.org/.  On Ubuntu (e.g. 14.04), use the
+  following commands:
 
-* Node JS: this work was done with v0.12.3. Node is widely available.  Best to
-  start at https://nodejs.org/
+     % sudo apt-get update -y
+     % sudo apt-get install mariadb-server
+
+* NodeJS: this work was done with v0.12.3 (CentOS) and v0.12.7
+  (Ubuntu). NodeJS is widely available.  Best to start at
+  https://nodejs.org/.  For CentoS 7, a binary distribution can be
+  used.  For this and tips about other OSes, see
+  https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
+
+  NOTE: On Ubuntu systems the 'node' command was renamed 'nodejs'
+  because of a name conflict.  This will prevent (at least some) npm
+  modules from installing to fail unless remedied.  Until resolved,
+  use Method 2 to install NodeJS (not Method 1).
+
+  Ubuntu Method 1 (should work, but not recommended on 14.04 at present):
+  ---------------
+
+  Use the following commands:
+
+    % sudo apt-get install nodejs
+    % (cd `which nodejs`; sudo ln -s nodejs node)
+
+  For a less global workaround create the symbolic link in a directory
+  on the path just of the user account being used.  This README
+  assumes the executable is 'node'.
+
+  Ubuntu Method 2 (more painful but works)
+  ---------------
+
+    * Download source tarball from http://www.nodejs.org/
+    * unpack
+    * follow instructions to install (usual ./configure; make; sudo
+      make install)
 
 * npm modules: npm (Node Package Manager) provides a standardized
   method for adding functionality to Node JS.  The 'npm' command line
   tool should be installed automatically by the Node JS installer.
   The following npm modules are required.  See https://www.npmjs.com/
-  for more information on npm.  The shell script 'npm-install.sh' will
-  invoke the appropriate commands in any Unix-flavored environment:
+  for more information on npm.  
 
-     * underscore
-     * colors
-     * optimist
-     * ls
-     * libxml-xsd
-     * libxmljs
-     * mariasql
-     * connect
-     * express
-     * sprintf-js
+  Run the shell script 'npm-install.sh' to install the modules needed
+  in any Unix-flavored environment.  It may be invoked with:
+ 
+      % sh npm-install.sh
 
-* Other: some of the included scripts are based on PERL and the Bourne
+  NOTE: All shell scripts have a hashbang for the location of the
+  Bourne Shell as found on CentOS (/usr/bin/sh).  On Ubuntu systems it
+  is located at /bin/sh. If you want to execute directly (e.g. '%
+  npm-install.sh') edit accordingly.
+
+  NOTE: Installing npm modules creates the 'node_modules'
+  subdirectory. The FLM server (flm-srv.sh) assumes this is below the
+  current working directory.  If you want to do something different
+  read up on the nodeJS require directive.
+
+  NOTE: some of the included scripts are based on PERL and the Bourne
   Shell.  Several of the npm modules require g++/gcc to compile native
   code.  This work was done on an x86 computer running CentOS 7
-  (7.0.1406).  In addition, the following Unix utilities may need to
-  be installed: nmap, openssl, base64, curl.
+  (7.0.1406).  It was also tested on Ubuntu 14.04 based on a clean
+  install.  In addition, the following Unix utilities may need to be
+  installed: nmap, 
 
-III. Unpacking the tarball
-
-After the pre-requisite software is installed, the tarball should be
-unpacked into the directory specified in the Node JS install (which
-will contain the 'node_modules' sub-directory.  The listing should look
-somewhat like this:
-
-   README.txt  flm-srv.js	node_modules/	  xsd/
-   auth/       npm-install.sh*  test-proto.sh*
-   database/   namespace	pwd-gen.js
-
-Be sure to run npm-install.sh after unpacking the tarball if it has
-not been done yet.
+* Other utilities: The following are required but usually part of base
+  installation: openssl, base64, curl.  In addition, nmap is
+  recommended for troubleshooting (but not required).
 
 IV. Database Seeding
 
 Files pertaining to the database may be found in the 'database'
 sub-directory.  On a freshly-installed MariaDB/MySQL system the
 following scripts can be used.  These may may need to be tweaked on an
-existing system.  The scripts and order of execution are as follows:
+existing system.  It does not matter what directory they are executed
+from (unlike nodeJS scripts).  The scripts and order of execution are
+as follows:
 
 * newuser.sql: First this creates a database named 'flm'.  Next, this
   creates a user 'flmtest' with password 'pwd' and grants appropriate
@@ -73,13 +113,15 @@ existing system.  The scripts and order of execution are as follows:
   commands should be invoked as the 'flmtest' user.  Note: several of
   the scripts contain hard-coded references to user 'flmtest' and
   password 'pwd'.  You will need to edit accordingly if you elect to
-  use something else.
+  use something else. This command needs to be invoked as SQL root
+  (where 'pwd-root' is whatever the actual MariaDB root password is):
+
+     % mysql -uroot -proot-pwd < newuser.sql
 
 * flmtable.sql: this creates a table named 'flm' which stores FLM data
-  used by the FLM Exchange Protocol server.  It may be invoked with the
-  command 'mysql -uflmtest -ppwd < flmtable.sql'.  The schema for the
-  flm table is very simple.  Each row represents a Facility,
-  comprising three columns:
+  used by the FLM Exchange Protocol server.  The schema for the flm
+  table is very simple.  Each row represents a Facility, comprising
+  three columns:
 
     * facility_id (PK): the Facility ID
 
@@ -92,23 +134,36 @@ existing system.  The scripts and order of execution are as follows:
       used to store a JSON representation of FLM data.  This is beyond
       the scope of this exercise.)
 
+  Invoke this script as follows: 
+
+     % mysql -uflmtest -ppwd < flmtable.sql
+
 * regen.sh: this shell script populates the database with synthetic
   data.  This is done by invoking the 'flmgen.pl' script with f1.txt,
   f2.txt, f3.txt, and f4.txt, respectively.  Each of these files
   contains variables that are substituted into a template file and
   output to a corresponding f?.xml file.  The generated XML documents
-  contain 2, 20, 6, and 30 auditoriums, respectively.
+  contain 2, 20, 6, and 30 auditoriums, respectively.  This command is
+  idempotent.
+
+     % shell regen.sh
 
 * flmgen.pl: this PERL script takes as input files (e.g. f?.txt)
   containing sets of variables (prefixed with either '__' or '___')
   and uses them to apply substitutions to a template file
   ('TEMPLATE.xml' by default); the output is written to a new file
   corresponding to each input file.  By convention, the input files
-  are .txt and the output files are .xml.
+  are .txt and the output files are .xml.  It is invoked indirectly by
+  the regen.sh script; it does not need to be run separately.
 
 * dbgen.pl: this PERL script takes FLM XML files (e.g. those produced
   by running flmgen.pl), and generates SQL statements to insert them
-  into the database.
+  into the database.  From the database directory, it may be run as
+  follows:
+
+     % dbgen.pl f[1234].xml
+
+  dbgen.pl is not idempotent.
 
 For the flm server, the only pre-requisite is for there to be a
 database named 'flm' that contains a table named 'flm' with the schema
@@ -119,8 +174,8 @@ may be performed in a command shell:
 
    % mysql -uroot < newuser.sql # -p not required if no root password
    % mysql -uflmuser -ppwd < flmtable.sh # create FLM table
-   % regen.sh  # generate 4 facilities (f1.xml, f2.xml, f3.xml, f4.xml)
-   % dbgen.pl f[1234].xml # add FLM XML docs to database
+   % sh regen.sh  # generate 4 facilities (f1.xml, f2.xml, f3.xml, f4.xml)
+   % sh dbgen.pl f[1234].xml # add FLM XML docs to database
 
 Note that SQL 'root' is orthogonal to Unix 'root'.  None of these
 commands need (or should) be run as superuser.
@@ -233,7 +288,7 @@ To verify a good basic installation, perform the following procedure:
       | xyz:583054  | 2015-06-16 00:38:01 |
       | xyz:773054  | 2015-06-15 23:14:44 |
       +-------------+---------------------+
-      5 rows in set (0.00 sec)
+      4 rows in set (0.00 sec)
 
   4) open a command window, cd to the Node directory and start the FLM
      server (you do not need to be root): 

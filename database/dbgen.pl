@@ -28,7 +28,7 @@
 # PERL script to insert FLM instance document into a MariaDB table
 # The IssueDate and FacilityID values are extracted from the instance
 #
-# Usage: dbgen.pl [-o output file] [-e] <flm-instance-file(s)>
+# Usage: dbgen.pl [-o output file] <flm-instance-file(s)>
 # where
 # -o output file (if omitted uses mktemp) to generate a file
 # -e execute generated SQL
@@ -48,7 +48,7 @@ if ($opts{"o"} eq "") {
 } else {
     $fname = $opts{"o"};
 }
-print "opt_e=$opts{'e'}\n";
+#print "opt_e=$opts{'e'}\n";
 print "saving output to $fname\n";
 
 open(OFILE, ">$fname") || die "can't open output file $fname";
