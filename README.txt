@@ -3,8 +3,8 @@ Last updated: Tue Jul 14 17:45:01 PDT 2015
 I. Introduction
 
 This tarball contains files that support an HTTP(s) server that
-implements the proposed FLM exchange protocol described in the SMPTE
-ST 430-7 revision.  As the revision is not finalized, this may not
+implements the proposed FLM exchange protocol described in the
+proposed SMPTE ST 430-15.  As this is not finalized, this may not
 accurately capture the current state of the protocol.  It is accurate
 (modulo bugs) as of June, 2015.
 
